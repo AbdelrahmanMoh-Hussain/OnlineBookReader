@@ -75,7 +75,7 @@ namespace Online_Book_Reader
             Console.Write($"Enter number in range 1 - {Sessions.Count}: ");
             var sessionChoice = int.Parse(Console.ReadLine());
 
-            index = 0;
+            index = 1;
             foreach (var session in Sessions)
             {
                 if(index == sessionChoice)
@@ -84,6 +84,7 @@ namespace Online_Book_Reader
                     reader.StartSession();
                     break;
                 }
+                index++;
             }
         }
 

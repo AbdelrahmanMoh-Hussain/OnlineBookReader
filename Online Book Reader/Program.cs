@@ -9,7 +9,6 @@
             
             List<User> users = new List<User>();
             
-
             while (true)
             {
                 PrintMainMenu();
@@ -86,9 +85,10 @@
 
                         if(key2 == "1")
                         {
+                            admin.BookAdded += Admin_BookAdded;
                             admin.AddBook();
                         }
-                        else if(key2 == "3")
+                        else if(key2 == "2")
                         {
                             break;
                         }
@@ -122,6 +122,14 @@
             }
         }
 
+        private static void Admin_BookAdded(string bookTitle)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"New Book Added!! Book Title: {bookTitle}");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        #region Options Menus
         static void PrintMainMenu()
         {
             Console.WriteLine("Menu: ");
@@ -146,5 +154,6 @@
             Console.WriteLine("\t2. Logout");
             Console.WriteLine("Enter number in range 1 - 2");
         }
+        #endregion
     }
 }

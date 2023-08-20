@@ -22,5 +22,11 @@ namespace Online_Book_Reader
         public string AuthorName { get; set; }
         public int NumberOfPages { get; set; }
         public string[] Pages { get; set; }
+
+        public string this[int index]
+        {
+            get { return Pages[index]; }
+            set { Pages[index] = value; }
+        }
     }
 }

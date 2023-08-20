@@ -21,13 +21,43 @@ namespace Online_Book_Reader
         public void StartSession()
         {
             Console.WriteLine($"Current Page: {pageNumber}/{book.NumberOfPages}");
-            Console.WriteLine(book.Pages[pageNumber - 1]);
+            Console.WriteLine(book[pageNumber - 1]);
 
+            string key = "";
             Console.WriteLine("Menu: ");
-            Console.WriteLine("\t1. Next Page");
-            Console.WriteLine("\t2. Previous Page");
-            Console.WriteLine("\t3. Stop reading");
-            var key = Console.ReadLine();
+            if (pageNumber == 1)
+            {
+                Console.WriteLine("\t1. Next Page");
+                Console.WriteLine("\t2. Stop reading");
+                key = Console.ReadLine();
+                if(key == "2")
+                {
+                    key = "3";
+                }
+            }
+            else if (pageNumber == book.NumberOfPages)
+            {
+                Console.WriteLine("\t1. Previous Page");
+                Console.WriteLine("\t2. Stop reading");
+                key = Console.ReadLine();
+                if (key == "2")
+                {
+                    key = "3";
+                }
+                else if(key == "1")
+                {
+                    key = "2";
+                }
+            }
+            else
+            {
+                Console.WriteLine("\t1. Next Page");
+                Console.WriteLine("\t2. Previous Page");
+                Console.WriteLine("\t3. Stop reading");
+                key = Console.ReadLine();
+            }
+
+            
             switch (key)
             {
                 case "1":

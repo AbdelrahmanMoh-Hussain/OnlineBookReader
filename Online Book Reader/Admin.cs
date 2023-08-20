@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Online_Book_Reader
 {
+    public delegate void BookAddHandelr(string bookTitle);
     internal class Admin
     {
         public static List<Book> AvailableBooks { get; set; } = new List<Book>();
-
+        public event BookAddHandelr BookAdded;
         public void AddBook()
         {
             Console.Write("Enter ISBN: ");
@@ -29,6 +30,10 @@ namespace Online_Book_Reader
 
             Book book = new Book(isbn, title, autorName, numberOfPages, pages);
             AvailableBooks.Add(book);
+            if(BookAdded != null)
+            {
+                BookAdded(title);
+            }
         }
     }
 }
