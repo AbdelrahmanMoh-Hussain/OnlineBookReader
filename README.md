@@ -1,5 +1,5 @@
 # Online Book Reader
-**Simple C#.Net App Focused on designing**, the "User" can read books from the available books added by the "Admin", each "User" has a reading history of the books, he/she has opened before, and he/she can continue reading from the point they stoped at
+**Simple C#.Net App Focused on designing**, the "User" can read books from the available books added by the "Admin", each "User" has a reading history of the books, he/she has opened before, and he/she can continue reading from the point they stopped at
 
 ## Features
 - Login
